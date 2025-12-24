@@ -1,0 +1,346 @@
+body {
+    margin: 0;
+        background: 
+        /* Верхний туман/дымка */
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(100, 0, 0, 0.3) 0%,
+            transparent 70%
+        ),
+        /* Диагональная "трещина" в реальности */
+        linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(139, 0, 0, 0.1) 50%,
+            transparent 70%
+        ),
+        /* Основной градиент от кроваво-красного к тьме */
+        linear-gradient(
+            to bottom,
+            #2a0000 0%,
+            #1a0000 25%,
+            #0d0000 50%,
+            #000000 75%,
+            #000000 100%
+        );
+    
+    /* Для плавного скролла */
+    background-attachment: fixed;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+
+/* Шапка */
+.header {
+    text-align: center;
+    padding: 25px;
+    border-bottom: 3px solid red;
+}
+
+.title{
+    position: relative;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.logo {
+    color: red;
+    font-size: 42px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px red;
+}
+
+/* МЕРЦАНИЕ */
+.flicker {
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    45% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+    55% { opacity: 1; }
+    70% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Навигация */
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav a:hover {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+/* Секции */
+.section {
+    text-align: left;
+    padding: 50px 80px;
+}
+
+.red-line{
+    width: 100px;
+    height: 3px;
+    background: red;
+    margin: 8px 0 15px 0;
+}
+
+/* Неоновый текст */
+.neon {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px darkred;
+}
+
+
+/* Подвал */
+.footer {
+    text-align: center;
+    padding: 50px;
+    border-top: 2px solid red;
+}
+
+.footer a {
+    color: red;
+    text-decoration: none;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.cards{
+    text-align: center;
+    padding: 35px;
+}
+.cards p{
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+}
+.poster{
+    width: 350px;
+    height: auto;
+    
+    box-shadow: 0 0 10px darkred;
+    transform: 0.4s;
+}
+.poster:hover{
+    box-shadow: 0 0 50px darkred;
+    transform: scale(1.05);
+}
+.highlight{
+    color :rgb(219, 18, 18);
+    border-bottom: 3px solid red;
+}
+img {
+  display: block;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.season-list{
+    list-style: none;
+    margin: 25px auto;
+    width: 500px;
+}
+.button {
+    display: block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #8b0000, #b30000);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #ff3333;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.2);
+    line-height: 1.4;
+    width: 100%;
+}
+.season-list li{
+    margin: 8px 0;
+}
+.button:hover {
+    background: linear-gradient(to right, #ff0000, #ff4444);
+    transform: scale(0.3s);
+    box-shadow: 0 0 50px darkred;
+    border-color: #ff5555;
+    text-shadow: 0 0 5px white;
+}
+  .ad-banner {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 300px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            border: 2px solid #e50914;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(229, 9, 20, 0.7);
+            z-index: 1000;
+            transition: transform 0.5s, right 0.5s;
+            overflow: hidden;
+        }
+        
+        .ad-banner.collapsed {
+            right: -280px;
+        }
+        
+        .ad-banner.collapsed:hover {
+            right: 0;
+        }
+        
+        .ad-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e50914;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .ad-title {
+            color: #e50914;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .kinder-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #e50914;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .kinder-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .ad-text {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .ad-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .ad-button:hover {
+            background-color: #ff1a2e;
+            box-shadow: 0 0 10px #e50914;
+        }
+        
+        /* Стили для формы регистрации */
+        .registration-form {
+            display: none;
+        }
+        
+        .registration-form h3 {
+            color: #e50914;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            background-color: #222;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: white;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #e50914;
+        }
+        
+        /* Стили для сообщений */
+        .message {
+            display: none;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .success {
+            background-color: rgba(0, 128, 0, 0.2);
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+        
+        .error {
+            background-color: rgba(229, 9, 20, 0.2);
+            color: #e50914;
+            border: 1px solid #e50914;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 1100px) {
+            .ad-banner {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .poster {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+            }
+        }
+    
