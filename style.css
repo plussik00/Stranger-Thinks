@@ -42,7 +42,93 @@ body {
     padding-bottom: 10px;
     text-align: left;
 }
+/* Контейнер для изображения с эффектом */
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
 
+/* Капли крови */
+.blood-drop {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #cc0000;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    z-index: 2;
+}
+
+.blood-drop-1 {
+    top: 45%;
+    left: 48%;
+}
+
+.blood-drop-2 {
+    top: 50%;
+    left: 52%;
+}
+
+/* Стекающие струйки крови */
+.blood-stream {
+    position: absolute;
+    background: linear-gradient(to bottom, 
+        rgba(204, 0, 0, 0.8) 0%,
+        rgba(153, 0, 0, 0.6) 30%,
+        rgba(102, 0, 0, 0.4) 60%,
+        rgba(51, 0, 0, 0.2) 90%,
+        transparent 100%);
+    width: 3px;
+    height: 0;
+    opacity: 0;
+    transition: height 1.5s ease, opacity 0.5s ease;
+    z-index: 1;
+}
+
+.blood-stream-left {
+    top: 46%;
+    left: 49%;
+    transform: rotate(-15deg);
+}
+
+.blood-stream-right {
+    top: 46%;
+    left: 51%;
+    transform: rotate(15deg);
+}
+
+/* Эффект при наведении на контейнер с изображением */
+.image-container:hover .blood-drop {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+.image-container:hover .blood-stream {
+    height: 40px;
+    opacity: 0.8;
+}
+
+/* Дополнительный эффект для самого изображения */
+.image-container:hover .poster {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Анимация пульсации для капель (опционально) */
+@keyframes bloodPulse {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(2px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.image-container:hover .blood-drop-1 {
+    animation: bloodPulse 1.5s infinite;
+}
+
+.image-container:hover .blood-drop-2 {
+    animation: bloodPulse 1.5s infinite 0.3s;
+}
 .logo {
     color: red;
     font-size: 42px;
@@ -344,3 +430,4 @@ img {
             }
         }
     
+
